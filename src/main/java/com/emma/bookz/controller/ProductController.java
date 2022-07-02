@@ -23,10 +23,11 @@ public class ProductController {
 
 
     //build create product rest api
-    @PostMapping("/products")
+    @PostMapping()
         public ResponseEntity<Product> saveProduct (@RequestBody Product product) {
         return new ResponseEntity<Product>(productService.saveProduct(product), HttpStatus.CREATED);
         //return productService.saveProduct(product);
+
     }
     //build get all employees rest api
     @GetMapping
