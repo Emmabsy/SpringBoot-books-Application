@@ -29,11 +29,18 @@ public class ProductController {
         //return productService.saveProduct(product);
 
     }
-    //build get all employees rest api
+    //build get all products rest api
     @GetMapping
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
 
     }
+    //build get product by id REST API
+    @GetMapping("{productId}")
+    public ResponseEntity<Product>getProductById(@PathVariable("productId") long productId){
+        return new ResponseEntity<Product>(productService.getProductById(productId),HttpStatus.OK);
+
+    }
+
 
 }
